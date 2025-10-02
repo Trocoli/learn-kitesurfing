@@ -1,0 +1,39 @@
+:root {
+    --title-1:  #c3ecef;
+    --slate-1: #45eafd; 
+    --slate-2: #00cfe2;
+    --slate-3: #00b4c7;
+    --slate-4: #009aad;
+    --slate-5: #008194;
+    --slate-6: #00697b;
+    --slate-6: #005163;
+    --slate-6: #003a4d;
+    --dark-7: #002737;
+}
+
+html,
+  body {
+    height: 100%;
+    background-color: #002737;
+    color: rgb(155, 155, 152);
+    font-family: "Roboto Mono", sans-serif; /* match home */
+    line-height: 1.5;
+  }
+
+h1,
+  h2,
+  h3 {
+    color: #c3ecef;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    color: hsl(204, 4%, 76%);
+  }
