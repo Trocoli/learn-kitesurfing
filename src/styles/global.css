@@ -1,3 +1,84 @@
+
+
+@layer reset {
+  /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-block-size: 100vh;
+  line-height: 1.6;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+}
+
+@layer base {
+
 :root {
     --title-1:  #c3ecef;
     --slate-1: #45eafd; 
@@ -9,11 +90,50 @@
     --slate-6: #005163;
     --slate-6: #003a4d;
     --dark-7: #002737;
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-gray-100: hsl(0, 2%, 79%);
+  --clr-brand-400: hsl(25, 88%, 75%);
+  --clr-brand-500: hsl(25, 88%, 66%);
+  --clr-green-400: hsl(143, 19%, 49%);
+  --clr-green-500: hsl(143, 38%, 37%);
+  --clr-green-600: hsl(145, 29%, 19%);
+  --clr-brown-500: hsl(10, 5%, 25%);
+  --clr-brown-600: hsl(9, 7%, 21%);
+  --clr-brown-700: hsl(9, 8%, 16%);
+  --clr-brown-800: hsl(0, 6%, 15%);
+  --clr-brown-900: hsl(0, 6%, 13%);
+
+  --clr-orange-500: hsl(28, 43%, 28%);
+  --clr-red-500: hsl(359, 34%, 24%);
+  --clr-teal-500: hsl(186, 42%, 25%);
+
+  /* fonts */
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 3.75rem;
+  --fs-1000: 3.75rem;
+
+  @media (width > 760px) {
+    --fs-300: 0.875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 2rem;
+    --fs-800: 3rem;
+    --fs-900: 5rem;
+    --fs-1000: 7.5rem;
+  }
+
 }
+
 
 html,
   body {
-    height: 100%;
     background-color: #002737;
     color: rgb(155, 155, 152);
     font-family: "Roboto Mono", sans-serif; /* match home */
@@ -26,14 +146,18 @@ h1,
     color: #c3ecef;
     font-weight: 700;
   }
+
   h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+
   h2 {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
+
   p {
     color: hsl(204, 4%, 76%);
   }
+}
